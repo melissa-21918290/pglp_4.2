@@ -18,12 +18,18 @@ public class UndoCommand implements Command {
 		//restocker le resulat
 		m.operands.push(io.eval(lastSaved,lastResult);
 		
-		//add the last saved result to orerands
-		m.operands.push();
-		
-		
+		//add the last saved result to operands
+		m.operands.push(lastSaved);
 		
 	}
 	
 
+	public Operation getInverse(Operation o){
+		if(o.symbole =='+') return Operation.MOINS;
+		if(o.symbole =='-') return Operation.PLUS;
+		if(o.symbole =='/') return Operation.MULT;
+		if(o.symbole =='*') return Operation.DIV;
+		return null;
+		
+	}
 }
