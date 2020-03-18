@@ -2,28 +2,27 @@ package TpJavaexo5.exo4;
 
 import java.util.Stack;
 
-import rpn.MoteurRPN;
-import rpn.Operation;
-
 public class Interpreteur{
 	private static Stack<Command>history= new Stack();
 	private static Command exit = new ExitCommand();
 	private static Command undo = new UndoCommand();
 	private static Command calcul =new CalculCommand();
 	
-	public static void exec(MoteurRNP m, String str){
+	public static void exec(MoteurRPN m, String str){
 		
 		//exit command
 		 if(str.toLowerCase().equals("exit")){
 			 exit.exec(m);
-			 System.out.println("le contenu de la pile" +MoteurRNP.getOperands().toString());
-			 System.out.println("l'historique de la pile" +MoteurRNP.getOperationHisroty().toString());
+			 System.out.println("le contenu de la pile" +MoteurRPN.getOperands().toString());
+			 System.out.println("l'historique de la pile" +MoteurRPN.getOperationHisroty().toString());
+			 
+			 else{
 			 
 			 //undo command
 			 if(str.toLowerCase().equals("undo")){
-				 System.out.println("la pile avant le undo" +MoteurRNP.getOperands().toString());
+				 System.out.println("la pile avant le undo" +MoteurRPN.getOperands().toString());
 				 undo.exec(m);
-				 System.out.println("la pile apres le undo" +MoteurRNP.getOperands().toString());
+				 System.out.println("la pile apres le undo" +MoteurRPN.getOperands().toString());
 			 }
 				else {
 					//apply operation or add new operand
@@ -39,8 +38,7 @@ public class Interpreteur{
 		            	MoteurRPN.addOperand(Float.parseFloat(str));
 		            }
 
+		 }}
+	
+		 
 		 }
-	}
-	
-	
-}
