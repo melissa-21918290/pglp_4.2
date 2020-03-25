@@ -21,12 +21,13 @@ import java.util.Stack;
 		}
 
 		private static final float MAX_VALUE = 9999;
-	    private static final float MIN_VALUE = 595;
+	    private static final float MIN_VALUE = 0
+	    		;
 
 	    public static void addOperand(float a) throws Exception {
 
 	        if ((a > MAX_VALUE && a >= 0) || (Math.abs(a) > MIN_VALUE && a < 0)) {
-	            throw new ValueOutOfRange(": Entrez un nombre compris entre -" + MIN_VALUE + " et " + MAX_VALUE);
+	            throw new ValueOutOfRange("Entrez un nombre compris entre " + MIN_VALUE + " et " + MAX_VALUE);
 	        } else {
 	            operands.push(a);
 	        }

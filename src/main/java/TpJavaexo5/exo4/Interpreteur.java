@@ -17,15 +17,15 @@ public class Interpreteur {
 			//exit command
 			if(str.toLowerCase().equals("exit") || str.toLowerCase().equals("quit") || str.toLowerCase().equals("stop")) {
 				exit.exec(m);
-				System.out.println("Operand stack " + MoteurRPN.getOperands().toString());
-				System.out.println("Operation stack " + MoteurRPN.operationHistory.toString());
+				System.out.println("les operands dans la pile " + MoteurRPN.getOperands().toString());
+				System.out.println("les operations dans la pile " + MoteurRPN.operationHistory.toString());
 			}
 			else
 			//undo command
 			if(str.toLowerCase().equals("undo") || str.toLowerCase().equals("cancel") || str.toLowerCase().equals("back")) {
-				System.out.println("Operands stack before undo" + MoteurRPN.getOperands().toString());
+				System.out.println("les operands avant undo" + MoteurRPN.getOperands().toString());
 				undo.exec(m);
-				System.out.println("Operands stack after undo" + MoteurRPN.getOperands().toString());
+				System.out.println("les operand apres undo" + MoteurRPN.getOperands().toString());
 				
 			}
 			else {

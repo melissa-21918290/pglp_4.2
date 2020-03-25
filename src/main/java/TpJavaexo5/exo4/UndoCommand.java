@@ -1,14 +1,12 @@
 package TpJavaexo5.exo4;
 
 
-
 public class UndoCommand implements Command {
 
-	@Override
 	public void exec(MoteurRPN m) {
 		// TODO Auto-generated method stub
 		//get all history
-		float lastResult = (float) m.getOperands().pop();
+		float lastResult = (Float) m.getOperands().pop();
 		float lastSaved  = m.operandsHistory.pop();
 		
 		//pop operation stack history
