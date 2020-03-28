@@ -25,7 +25,7 @@ public class Interpreteur {
 			if(str.toLowerCase().equals("undo") || str.toLowerCase().equals("cancel") || str.toLowerCase().equals("back")) {
 				System.out.println("les operands avant undo" + MoteurRPN.getOperands().toString());
 				undo.exec(m);
-				System.out.println("les operand apres undo" + MoteurRPN.getOperands().toString());
+				System.out.println("les operands apres undo" + MoteurRPN.getOperands().toString());
 				
 			}
 			else {

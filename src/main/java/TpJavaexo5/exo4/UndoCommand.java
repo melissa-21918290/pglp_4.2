@@ -7,6 +7,8 @@ public class UndoCommand implements Command {
 		// TODO Auto-generated method stub
 		//get all history
 		float lastResult = (Float) m.getOperands().pop();
+		
+		if (!MoteurRPN.operationHistory.isEmpty()) {
 		float lastSaved  = m.operandsHistory.pop();
 		
 		//pop operation stack history
@@ -24,7 +26,7 @@ public class UndoCommand implements Command {
 		//add the last saved res to operands
 		m.operands.push(lastSaved);
 	}
-	
+	}
 	public Operation getInverse(Operation o) {
 		if(o.symbole == '+') return Operation.MOINS;
 		if(o.symbole == '-') return Operation.PLUS;
